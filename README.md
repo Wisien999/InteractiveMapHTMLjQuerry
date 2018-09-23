@@ -1,1 +1,1 @@
-# InteractiveMapHTMLjQuerry
+# InteractiveMapHTML+jQuerry
