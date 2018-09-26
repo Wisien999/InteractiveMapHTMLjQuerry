@@ -2,33 +2,109 @@ body {
     background: #222930;
     color: rgb(240, 255, 255);
     font-family: Arial;
+    margin: 0;
+    padding: 0;
 }
 
 #map {
     background-image: url("../img/map.png");
-
 }
 
 .city {
     position: relative;
     height: 50px;
     width: 50px;
-    background-image: url("../img/interface.png");
+    background-image: url('../img/sign.png');
     background-size: 100%;
+    cursor: pointer;
 }
 
 .navbar {
-    height: 120px;
     background-color: #fff;
     text-align: center;
     color: green;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 35px;
+    padding-top: 5px;
+    /* width: 100%; */
+    position: sticky;
+    top: 0;
+    left: 0;
 }
 
-.button {
-    text-align: center;
+ol.button {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    list-style-type: none;
+    display: inline-block;
+}
+
+ol.button > li {
+    border-right: red dashed 3px;
+    line-height: 140%;
+    float: left;
+    padding: 0 13px;
+}
+
+ol.button > li:first-child { border-left: red dashed 3px; }
+ol.button > li:hover { background-color: #eee; }
+ol.button a { text-decoration: none; color: green; }
+
+.container {
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 10px;
+    background-color: #1b2838;
+    padding: 12px 10px;
+    border: black solid 2px;
+}
+
+.side {
+    float: right;
+    width: 400px;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.up {
+    position: fixed;
+    right: 20px;
+    bottom: 15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 40%;
+    background: #bdbdbd url("../img/arrowUp.png");
+    background-size: 100%;
+}
+
+div.gallery { text-align: center;}
+
+div.gallery figure {
+    margin: 10px;
+    width: 30%;
+    display: inline-block;
+}
+
+div.gallery > img {
+    width: 30%;
+    margin: 10px;
+}
+
+div.gallery img {
+    border: black solid 2px;
+}
+
+.article {
+    margin-bottom: 50px;
+}
+
+ol.button > li > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
