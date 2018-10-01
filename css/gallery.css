@@ -1,0 +1,78 @@
+div.DisplayGallery {
+    width: 70%;
+    height: 85%;
+    background-color: #b8b8b8;
+    color: black;
+    padding: 30px;
+    padding-top: 20px;
+    margin-top: 20px;;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    position: relative;
+}
+
+div#img {
+    margin: 15px;
+    height: 90%;
+    text-align: center;
+}
+
+.DisplayGallery #title, .DisplayGallery #counter {
+    display: inline;
+}
+
+.DisplayGallery > div#TopBar {
+    width: 100%;
+}
+
+.DisplayGallery #counter {
+    float: right;
+    margin-right: 50px;
+}
+
+/* div#img img {
+    margin-right: auto;
+    margin-left: auto;
+} */
+
+.background {
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+/* body {
+    height: 650px;
+    background: white;
+    padding: 0;
+    margin: 0;
+} */
+
+.arrowLeft {
+    cursor: pointer;
+    transform: rotate(-90deg);
+    left: -35px;;
+}
+
+.arrowRight {
+    cursor: pointer;
+    transform: rotate(90deg);
+    right: -35px;
+}
+
+.arrow {
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    background-color: white;
+    border: #ebebeb solid 4px;
+    border-radius: 100%;
+    top: 40%;
+}

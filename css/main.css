@@ -1,35 +1,52 @@
 body {
     background: #222930;
-    color: rgb(240, 255, 255);
+    color: #f0ffff;
     font-family: Arial;
     margin: 0;
     padding: 0;
 }
 
-#map {
-    background-image: url("../img/map.png");
-}
-
-.city {
-    position: relative;
-    height: 50px;
-    width: 50px;
-    background-image: url('../img/sign.png');
-    background-size: 100%;
-    cursor: pointer;
-}
-
+/* Nav style */
 .navbar {
     background-color: #fff;
     text-align: center;
     color: green;
     font-weight: bold;
     font-size: 35px;
+    font-family: monospace, Bookman, Arial;
     padding-top: 5px;
     /* width: 100%; */
     position: sticky;
     top: 0;
     left: 0;
+}
+
+ol.button > li > ul {
+    list-style-type: none;
+    padding: 7px;
+    margin: 0;
+    position: absolute;
+    /* left: 0; */
+    z-index: 99;
+    background-color: #8f8f8f;
+    font-size: 0.7em;
+    border-radius: 5%;
+    display: none;
+}
+
+ol.button > li > ul > li:hover {
+    background-color: #9f9f9f;
+    transition: 0.2s;
+    
+}
+
+ol.button > li > ul > li > a {
+    color: #e6e4e4;
+}
+
+ol.button > li > ul > li:hover > a {
+    color: #535353;
+    transition: 0.2s;
 }
 
 ol.button {
@@ -47,9 +64,29 @@ ol.button > li {
     padding: 0 13px;
 }
 
+ol.button > li > ul > li { border-top: red dashed 2px;}
+ol.button > li > ul > li:last-child { border-bottom: red dashed 2px;}
 ol.button > li:first-child { border-left: red dashed 3px; }
-ol.button > li:hover { background-color: #eee; }
+ol.button > li:hover { background-color: #eee; transition: 0.15s;}
+ol.button > li:hover > ul { display: block;}
 ol.button a { text-decoration: none; color: green; }
+
+
+
+#map {
+    background-image: url("../img/map.png");
+}
+
+.city {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background-image: url('../img/sign.png');
+    background-size: 100%;
+    cursor: pointer;
+}
+
+
 
 .container {
     width: 80%;
@@ -97,14 +134,9 @@ div.gallery > img {
 
 div.gallery img {
     border: black solid 2px;
+    cursor: pointer;
 }
 
 .article {
     margin-bottom: 50px;
-}
-
-ol.button > li > ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
 }
