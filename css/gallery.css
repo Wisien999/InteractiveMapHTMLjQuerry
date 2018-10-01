@@ -1,15 +1,17 @@
 div.DisplayGallery {
     width: 70%;
-    height: 85%;
+    height: 580px;
     background-color: #b8b8b8;
     color: black;
     padding: 30px;
     padding-top: 20px;
-    margin-top: 20px;;
+    /* margin-top: 10%; */
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
     position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 div#img {
@@ -55,18 +57,6 @@ div#img {
     margin: 0;
 } */
 
-.arrowLeft {
-    cursor: pointer;
-    transform: rotate(-90deg);
-    left: -35px;;
-}
-
-.arrowRight {
-    cursor: pointer;
-    transform: rotate(90deg);
-    right: -35px;
-}
-
 .arrow {
     width: 75px;
     height: 75px;
@@ -74,5 +64,20 @@ div#img {
     background-color: white;
     border: #ebebeb solid 4px;
     border-radius: 100%;
-    top: 40%;
+    top: 50%;
+    transition: 0.3s;
+}
+
+.arrow:hover { border: #838383 solid 4px;}
+
+.arrowLeft {
+    cursor: pointer;
+    transform: translateY(-50%) rotate(-90deg);
+    left: -35px;;
+}
+
+.arrowRight {
+    cursor: pointer;
+    transform: rotate(90deg) translate(-50%);
+    right: -35px;
 }
