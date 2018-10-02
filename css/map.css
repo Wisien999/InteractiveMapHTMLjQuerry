@@ -1,0 +1,50 @@
+html, body {
+    background: #222930;
+    color: #f0ffff;
+    font-family: Arial;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+    position: relative;
+    /* background-image: url("../img/map.png"); */
+    /* height: 100%; */
+    /* background-size: 100%; */
+    width: 1000px;;
+    /* top: -300px; */
+    /* left: 50%; */
+    display: inline-block;
+}
+
+.city {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-image: url('../img/sign.png');
+    background-size: 100%;
+    cursor: pointer;
+}
+
+#bronina {
+    bottom: 26.1%;
+    /* bottom: 260px; */
+    left: 46.4%;
+    /* left: 465px; */
+}
+
+#stopnica {
+    bottom: 25.3%;
+    left: 53.2%;
+}
+
+#kozubow{
+    bottom: 24.8%;
+    left: 33.6%;
+}
+
+#olganow {
+    bottom: 20.7%;
+    left: 47.8%;
+}

@@ -71,22 +71,7 @@ ol.button > li:hover { background-color: #eee; transition: 0.15s;}
 ol.button > li:hover > ul { display: block;}
 ol.button a { text-decoration: none; color: green; }
 
-
-
-#map {
-    background-image: url("../img/map.png");
-}
-
-.city {
-    position: relative;
-    height: 50px;
-    width: 50px;
-    background-image: url('../img/sign.png');
-    background-size: 100%;
-    cursor: pointer;
-}
-
-
+/*///////////////////////////////////*/
 
 .container {
     width: 80%;
