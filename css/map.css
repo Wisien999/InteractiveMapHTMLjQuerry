@@ -1,6 +1,6 @@
 html, body {
     background: #222930;
-    color: #f0ffff;
+    color: #303030;
     font-family: Arial;
     text-align: center;
     margin: 0;
@@ -16,6 +16,24 @@ html, body {
     /* top: -300px; */
     /* left: 50%; */
     display: inline-block;
+}
+
+#map .cityInfo {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    height: 120px;
+    width: 400px;
+    background-color: #e4e4e4;
+    text-align: left;
+    padding: 10px;
+    border-radius: 4px;
+    border: #303030 solid 1px;
+    display: none;
+}
+
+#map h3 {
+    margin: 10px;
 }
 
 .city {
