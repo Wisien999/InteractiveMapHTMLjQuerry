@@ -3,12 +3,10 @@ let maxNo;
 let title;
 let it;
 let picture = $(".gallery img");
-//console.log(picture);
 
 picture.click(function(event) {
     const body = $("body");
     it = $(this);
-    //console.dir(this);
 
     // Save Pictures amount and actual picture number
     maxNo = it.parents(".gallery").children().length;
@@ -39,7 +37,6 @@ $("body").click(function(event) {
         $("div.background").remove();
     }
     else if(event.target.id == "left") {  // Previous picture 
-        // let it = $(event.target);
         $("div.background").remove();
 
         if (it.parent("figure").length) {
@@ -57,8 +54,7 @@ $("body").click(function(event) {
             }
         }
     }
-    else if(event.target.id == "right") {  // DOESN'T WORK YET
-        // let it = $(event.target);
+    else if(event.target.id == "right") {  // Next picture
         $("div.background").remove();
 
         if (it.parent("figure").length) {
