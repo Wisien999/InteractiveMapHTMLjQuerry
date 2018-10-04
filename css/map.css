@@ -30,6 +30,7 @@ html, body {
     border-radius: 4px;
     border: #303030 solid 1px;
     display: none;
+    cursor: pointer;
 }
 
 #map h3 {

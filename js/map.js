@@ -3,6 +3,8 @@
 let animationDuration = 500;
 
 let lock = false;
+let lastID;
+
 $("#map").on("mouseover", e => {
     if (!lock) {
         let info = $(".cityInfo");
@@ -17,10 +19,11 @@ $(".city").on("mouseout", e => lock = false);
 $(".city").on("mouseenter", function (e) {
     let it = $(this);
     //console.dir(it.position());
-
+    
     let cityName;
     let sDes;
-
+    
+    lastID = e.target.id;
     switch (e.target.id) {
         case "bronina":
         cityName = "Bronina";
@@ -29,15 +32,17 @@ $(".city").on("mouseenter", function (e) {
         Krasowa jaskinia Sawickiego`;
         break;
         case "stopnica":
-        cityName;
-        sDes;
+        cityName = "Stopnica";
+        sDes = `Historia nazwy<br />
+        Bogata historia<br />
+        Obiekty`;
         break;
         case "kozubow":
-        cityName;
+        cityName = "Kozubów";
         sDes;
         break;
         case "olganow":
-        cityName;
+        cityName = "Olganów";
         sDes;
         break;
     }
@@ -54,11 +59,12 @@ $(".city").on("mouseenter", function (e) {
     let info = $(".cityInfo");
     info.on("mouseout", e => lock = false);
     info.on("mouseover", e => lock = true);
+    info.on("click", e => window.location.href = "./cities/" + lastID + ".html");
 
     info.css("top", it.position().top + 10);
     info.css("left", it.position().left + 20);
 
-    $(".cityInfo").show(animationDuration);
+    info.show(animationDuration);
     //$("#" + e.target.id).show();
 });
 
