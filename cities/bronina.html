@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="../css/gallery.css">
 </head>
 
-<body id="toTop">
+<body id="toTop" onload="setArticleHeight()">
 	<div class="navbar">
 		<ol class="button">
 			<li class="button"><a href="../index.html">Mapa</a></li>
@@ -21,7 +21,15 @@
 					<li><a href="bronina.html#objects">Ciekawe Obiekty</a></li>
 				</ul>
 			</li>
-			<li class="button"><a href="stopnica.html">Stopnica</a></li>
+			<li class="button"><a href="stopnica.html">Stopnica</a>
+				<ul>
+					<li><a href="stopnica.html#main">Ogólnie o Stopnicy</a></li>
+					<li><a href="stopnica.html#name">Pochodzenie nazwy</a></li>
+					<li><a href="stopnica.html#city">Prawa miejskie</a></li>
+					<li><a href="stopnica.html#histry">Historia</a></li>
+					<li><a href="sObjects.html">Obiekty</a></li>
+				</ul>
+			</li>
 			<li class="button"><a href="olganow.html">Olganów</a></li>
 			<li class="button"><a href="kozubow.html">Kozubów</a></li>
 		</ol>
@@ -103,7 +111,7 @@
 			</div>
 		</div>
 		<div class="article" id="objects">
-			<h3>Ciekawe Obiekty</h3>			
+			<h3>Ciekawe Obiekty</h3>
 			<div class="gallery">
 				<figure>
 					<img src="../img/bronina/SOSWBronina.jpg" alt="" width="100%">
@@ -143,7 +151,7 @@
 				</figure>
 				<figure>
 					<img src="../img/bronina/table0.jpg" alt="" width="100%">
-					<figcaption>Ławki pod stawem</figcaption>
+					<figcaption>Ławki przy stawie</figcaption>
 				</figure>
 				<figure>
 					<img src="../img/bronina/oldForge0.jpg" alt="" width="100%">
@@ -153,15 +161,18 @@
 					<img src="../img/bronina/oldForge1.jpg" alt="" width="100%">
 					<figcaption>Szyld "Starej Kuźni"</figcaption>
 				</figure>
-			</div>	
+			</div>
 		</div>
-	</div> 
-	<a href="#toTop"><div class="up"></div></a>
+	</div>
+	<a href="#toTop">
+		<div class="up"></div>
+	</a>
 
 	<script src="../js/jquery-3.3.1.min.js"></script>
 	<script src="../js/smoothScroll.js"></script>
 	<script src="../js/gallery.js"></script>
-	
+	<script src="../js/main.js"></script>
+
 </body>
 
 </html>

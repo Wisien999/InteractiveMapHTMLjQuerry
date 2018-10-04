@@ -87,6 +87,10 @@ ol.button a { text-decoration: none; color: green; }
     width: 400px;
 }
 
+.side img {
+    border: black solid 2px;
+}
+
 figcaption {
     text-align: center;
     font-size: 0.9em;
@@ -121,7 +125,17 @@ div.gallery img {
     border: black solid 2px;
     cursor: pointer;
 }
+div#monument > .gallery { text-align: left;}
 
-.article {
-    margin-bottom: 50px;
+#herb {
+     width: 200px;
+}
+
+a {
+    color: #f0ffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c0cccc;
 }
