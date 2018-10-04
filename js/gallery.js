@@ -30,8 +30,7 @@ picture.click(function(event) {
                 </div>`);
 });
 
-$("body").click(function(event) { 
-    console.dir(event.target);
+$("body").click(function(event) {
     
     if (event.target.className == "background") { //Close Gallery
         $("div.background").remove();
@@ -95,7 +94,6 @@ function getIndex(it, endIndex) {
 function getTitle(it, endIndex) {
     if (it.parent("figure").length) {
         return it.parent().children("figcaption").text();
-
     }
     return "";
 }
