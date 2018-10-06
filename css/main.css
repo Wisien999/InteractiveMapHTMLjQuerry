@@ -127,6 +127,12 @@ div.gallery img {
 }
 div#monument > .gallery { text-align: left;}
 
+span.serialData {
+    float: right;
+    margin-right: 20px;
+    font-weight: 600;
+}
+
 #herb {
      width: 200px;
 }
@@ -136,6 +142,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: #c0cccc;
-}
+a:hover { color: #c0cccc;}
+
+div.center { text-align: center;}
+div.center > img { border: black solid 2px;}
