@@ -1,4 +1,4 @@
-//$(".city").on("mouseout", (e) => $(".cityInfo").hide(500));
+﻿//$(".city").on("mouseout", (e) => $(".cityInfo").hide(500));
 
 let animationDuration = 500;
 
@@ -33,17 +33,19 @@ $(".city").on("mouseenter", function (e) {
         break;
         case "stopnica":
         cityName = "Stopnica";
-        sDes = `Historia nazwy<br />
+        sDes = `"Stopnica" czy "Stobnica"?<br />
         Bogata historia<br />
         Obiekty`;
         break;
         case "kozubow":
         cityName = "Kozubów";
-        sDes;
+        sDes = `Kozubowski park krajobrazowy<br />
+	2 bitwy<br />
+	Piękne widoki z Góry Byczowskiej`;
         break;
         case "olganow":
         cityName = "Olganów";
-        sDes;
+        sDes = `W 1827 roku liczyła 128 mieszkańców i 18 domów. Obecnie jest to ok. 90 domów, zamieszkałych przez ok. 312 osób.`;
         break;
     }
 
