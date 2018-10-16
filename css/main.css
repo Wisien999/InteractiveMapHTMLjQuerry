@@ -125,7 +125,7 @@ div.gallery img {
     border: black solid 2px;
     cursor: pointer;
 }
-div#monument > .gallery { text-align: left;}
+/* div#monument > .gallery { text-align: left;} */
 
 span.serialData {
     float: right;
