@@ -1,24 +1,20 @@
-﻿//$(".city").on("mouseout", (e) => $(".cityInfo").hide(500));
-
-let animationDuration = 500;
+﻿let animationDuration = 500;
 
 let lock = false;
 let lastID;
+let i = 0;
 
-$("#map").on("mouseover", e => {
+$("#map").on("mouseover", e => { // remove pop-up
     if (!lock) {
         let info = $(".cityInfo");
         info.hide(animationDuration);
-        //$(".city").hide(animationDuration);
         setTimeout(function () { info.remove() }, animationDuration + 100);
-        //info.remove();
     }
 });
 $(".city").on("mouseover", e => lock = true);
 $(".city").on("mouseout", e => lock = false);
 $(".city").on("mouseenter", function (e) {
     let it = $(this);
-    //console.dir(it.position());
     
     let cityName;
     let sDes;
@@ -50,7 +46,7 @@ $(".city").on("mouseenter", function (e) {
     }
 
         $("#map").append(`
-            <div class="cityInfo">
+            <div class="cityInfo" id="Info${i}">
                 <h3>${cityName}</h3>
                 <div class="info">
                     ${sDes}
@@ -58,7 +54,7 @@ $(".city").on("mouseenter", function (e) {
             </div>
         `);
 
-    let info = $(".cityInfo");
+    let info = $(".cityInfo#Info" + i);
     info.on("mouseout", e => lock = false);
     info.on("mouseover", e => lock = true);
     info.on("click", e => window.location.href = "./cities/" + lastID + ".html");
@@ -66,10 +62,17 @@ $(".city").on("mouseenter", function (e) {
     info.css("top", it.position().top + 10);
     info.css("left", it.position().left + 20);
 
-    info.show(animationDuration);
-    //$("#" + e.target.id).show();
-});
+    info.on("mouseleave", e => { // remove pop-up
+        if (!lock) {
+            info.hide(animationDuration);
+            setTimeout(function () { info.remove() }, animationDuration + 100);
+        }
+    });
 
+    i++;
+
+    info.show(animationDuration);
+});
 
 // Redirect to the city info
 
