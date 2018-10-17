@@ -137,6 +137,20 @@ span.serialData {
      width: 200px;
 }
 
+div#poem {
+    width: 50%;
+}
+
+div#poem p {
+    font-style: italic;
+    margin-left: 30%;
+}
+
+div#poem p.signature {
+    text-align: right;
+    font-size: 0.85em;
+}
+
 a {
     color: #f0ffff;
     text-decoration: none;
