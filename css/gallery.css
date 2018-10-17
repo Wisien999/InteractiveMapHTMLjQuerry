@@ -1,5 +1,6 @@
 div.DisplayGallery {
-    width: 70%;
+    /* width: 70% */
+    width: 885px; 
     height: 580px;
     background-color: #b8b8b8;
     color: black;
