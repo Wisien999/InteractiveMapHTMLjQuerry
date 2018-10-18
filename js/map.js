@@ -4,49 +4,51 @@ let lock = false;
 let lastID;
 let i = 0;
 
-$("#map").on("mouseover", e => { // remove pop-up
-    if (!lock) {
-        let info = $(".cityInfo");
-        info.hide(animationDuration);
-        setTimeout(function () { info.remove() }, animationDuration + 100);
-    }
-});
-$(".city").on("mouseover", e => lock = true);
-$(".city").on("mouseout", e => lock = false);
+let objects = {};
+
+// $("#map").on("mouseover", e => { // remove pop-up
+//     if (!lock) {
+//         let info = $(".cityInfo");
+//         info.hide(animationDuration);
+//         setTimeout(function () { info.remove() }, animationDuration + 100);
+//     }
+// });
+// $(".city").on("mouseover", e => lock = true);
+// $(".city").on("mouseout", e => lock = false);
 $(".city").on("mouseenter", function (e) {
     let it = $(this);
-    
+
     let cityName;
     let sDes;
-    
+
     lastID = e.target.id;
     switch (e.target.id) {
         case "bronina":
-        cityName = "Bronina";
-        sDes = `W 1827 r. wieś liczyła 25 domów, a obecnie 122 domy.<br />
+            cityName = "Bronina";
+            sDes = `W 1827 r. wieś liczyła 25 domów, a obecnie 122 domy.<br />
         Bitwa pod Broniną z 9 września 1939 r.<br />
         Krasowa jaskinia Sawickiego`;
-        break;
+            break;
         case "stopnica":
-        cityName = "Stopnica";
-        sDes = `"Stopnica" czy "Stobnica"?<br />
+            cityName = "Stopnica";
+            sDes = `"Stopnica" czy "Stobnica"?<br />
         Bogata historia<br />
         Obiekty`;
-        break;
+            break;
         case "kozubow":
-        cityName = "Kozubów";
-        sDes = `Kozubowski park krajobrazowy<br />
-	2 bitwy<br />
-	Piękne widoki z Góry Byczowskiej`;
-        break;
+            cityName = "Kozubów";
+            sDes = `Kozubowski park krajobrazowy<br />
+	    2 bitwy<br />
+	    Piękne widoki z Góry Byczowskiej`;
+            break;
         case "olganow":
-        cityName = "Olganów";
-        sDes = `W 1827 roku liczyła 128 mieszkańców i 18 domów. Obecnie jest to ok. 90 domów, zamieszkałych przez ok. 312 osób.`;
-        break;
+            cityName = "Olganów";
+            sDes = `W 1827 roku liczyła 128 mieszkańców i 18 domów. Obecnie jest to ok. 90 domów, zamieszkałych przez ok. 312 osób.`;
+            break;
     }
 
-        $("#map").append(`
-            <div class="cityInfo" id="Info${i}">
+    $("#map").append(`
+            <div class="cityInfo" id="${lastID}Info">
                 <h3>${cityName}</h3>
                 <div class="info">
                     ${sDes}
@@ -54,30 +56,80 @@ $(".city").on("mouseenter", function (e) {
             </div>
         `);
 
-    let info = $(".cityInfo#Info" + i);
-    info.on("mouseout", e => lock = false);
-    info.on("mouseover", e => lock = true);
-    info.on("click", e => window.location.href = "./cities/" + lastID + ".html");
+    objects[lastID] = {
+        HTMLobj: $(`.cityInfo#${lastID}Info`),
+        parentHTMLobj: $("#" + lastID),
+        lock: false
+    };
 
-    info.css("top", it.position().top + 10);
-    info.css("left", it.position().left + 20);
-
-    info.on("mouseleave", e => { // remove pop-up
-        if (!lock) {
-            info.hide(animationDuration);
-            setTimeout(function () { info.remove() }, animationDuration + 100);
+    objects[lastID].parentHTMLobj.on("mouseleave", e => {
+        if (e.relatedTarget.id != e.target.id + "Info") {
+            objects[lastID].HTMLobj.hide(animationDuration);
+            setTimeout(function () { objects[lastID].HTMLobj.remove() }, animationDuration * 2);
+            objects[lastID].lock = false;
+        }
+    });
+    objects[lastID].HTMLobj.on("mouseleave", e => {
+        const tarID = e.target.id;
+        if (e.relatedTarget.id != tarID.substring(0, tarID.length - 4)) {
+            const obj = $(e.target);
+            obj.hide(animationDuration);
+            setTimeout(function () { obj.remove() }, animationDuration * 2);
+            objects[lastID].lock = false;
+            // relID.substring(0, relID.length() - 4);
         }
     });
 
-    i++;
+    objects[lastID].HTMLobj.on("click", e => window.location.href = "./cities/" + lastID + ".html");
 
-    info.show(animationDuration);
+    objects[lastID].HTMLobj.css("top", it.position().top + 10);
+    objects[lastID].HTMLobj.css("left", it.position().left + 20);
+
+    if (!objects[lastID].lock){
+        objects[lastID].HTMLobj.show(animationDuration);
+    }
+
+    objects[lastID].lock = true;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // let info = $(".cityInfo#Info" + i);
+    // info.on("mouseout", e => lock = false);
+    // info.on("mouseover", e => lock = true);
+    // info.on("click", e => window.location.href = "./cities/" + lastID + ".html");
+
+    // info.css("top", it.position().top + 10);
+    // info.css("left", it.position().left + 20);
+
+    // info.on("mouseleave", e => { // remove pop-up
+    //     if (!lock) {
+    //         info.hide(animationDuration);
+    //         setTimeout(function () { info.remove() }, animationDuration + 100);
+    //     }
+    // });
+
+    // i++;
+
+    // info.show(animationDuration);
 });
 
 // Redirect to the city info
 
 $(".city").on("click", (e) => window.location.href = "./cities/" + e.target.id + ".html");
 
+// Scroll down on start
 
 $('html, body').animate({
     scrollTop: $(document).height()
